@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/paginaP.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Projeto FireBase</title>
+</head>
+
+<body>
+    <script src="routes.js"></script>
+    
+    <main>
+        <p>Mude de vida praticando exercícios físicos, tudo de forma natural, sem fármacos que põem em risco a sua saúde.</p>
+        <img src="/img/capa_2.png">
+        <div class="Ancora-s">
+            <a href="#Compra-Ancora">Começar Agora!</a>
+        </div>
+        <div class="caixa">
+            <p>Veja o que se sabe sobre os benefícios do exercício físico</p>
+        </div>
+
+        <div class="slides">
+            <div class="w3-content w3-display-container">
+                <img class="mySlides" src="/img/2179526a-741b-4e02-9ab3-64465a7d70bc.jpg ">
+                <img class="mySlides" src="/img/65b9b3ad-6fd6-4469-b5fa-67ee71d52668.jpg" >
+                <img class="mySlides" src="/img/96084baf-20bf-45e4-a2b3-f617e3c6bde4.jpg" >
+              
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+              </div>
+        </div>
+
+        <div class="capitulos">
+            <div>
+                <div>
+                    <h2>Capítulo: 1</h2>
+                    <p>A IMPOTÊNCIA SEXUAL, UM PROBLEMA ANTIGO</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 2</h2>
+                    <p>O QUE É DISFUNÇÃO ERÉTIL?</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 3</h2>
+                    <p>PROBLEMAS CARDIOVASCULARES E DISFUNÇÃO ERÉTIL</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 4</h2>
+                    <p> COMO RECUPERAR A EREÇÃO E DIMINUIR O RISCO DE PROBLEMAS CARDÍACOS?</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 5</h2>
+                    <p>FATORES QUE CONTRIBUEM PARA A DISFUNÇÃO</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 6</h2>
+                    <p>O EXERCÍCIO FÍSICO É A MELHOR OPÇÃO</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 7</h2>
+                    <p>QUAIS EXERCÍCIOS SÃO MAIS INDICADOS?</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 8</h2>
+                    <p>TIPOS DE EXERCÍCIOS</p>
+                </div>
+
+                <div>
+                    <h2>Capítulo: 9</h2>
+                    <p>EXERCÍCIOS QUE COMBATEM A DISFUNÇÃO ERÉTIL</p>
+                </div>
+            </div>
+        </div>
+        <section id="Compra-Ancora">
+            <div class="compra">
+                <div>
+                    <h1>TUDO ISSO<br>POR APENAS</h1>
+                    <h3>R$ 149,00</h3>
+                    <h2>R$ 89,00</h2>
+                    <h4>( 59% de desconto )</h4>
+                </div>
+                <div>
+                    <img src="/img/capa_1.png">
+                </div>
+                <div class="button-s">
+                    <form action="/cadastro" method="get">
+                        <button>Compre Agora!</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Cronometro 23horas : 20 minutos : Segundos -->
+        <div class="particao">
+            <div class="cronometro">
+                <div class="contagem">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="numero" id="dia"></div>
+                            <td>
+                                <div class="numero" id="hora">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="numero" id="minuto">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="numero" id="segundo">
+                                </div>
+                            </td>
+                        </tr>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+
+        var target_date = new Date("january 15, 2500").getTime();
+
+        var dias, horas, minutos, segundos;
+
+        var regressiva = document.getElementById("regressiva");
+        setInterval(function () {
+            var current_date = new Date().getTime();
+            var segundos_f = (target_date - current_date) / 1000;
+            dias = parseInt(segundos_f / 86400);
+            segundos_f = segundos_f % 86400;
+            
+            horas = parseInt(segundos_f / 3600);
+            segundos_f = segundos_f % 3600;
+            
+            minutos = parseInt(segundos_f / 60);
+            segundos = parseInt(segundos_f % 60);
+            document.getElementById('hora').innerHTML = horas + "  Hr :  ";
+            document.getElementById('minuto').innerHTML = minutos + "  Min : ";
+            document.getElementById('segundo').innerHTML = segundos + "  Segs ";
+        
+            }, 1000);
+
+        </script>
+</body>
+</html>
